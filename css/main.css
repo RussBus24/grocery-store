@@ -9,9 +9,9 @@ body {
 }
 
 h1 {
-	background-color: blue;
+	background-color: #ccc;
 	color: #fff;
-	font-family: Impact, Charcoal, sans-serif;
+	font-family: Lucida, sans-serif;
 	height: 50px;
 	margin: 0 auto;
 	padding-top: 0.3em;
@@ -28,10 +28,14 @@ h3 {
 }
 
 .order-section {
+	background-color: #fff;
+	border-radius: 5px;
+	border: solid 1px white;
 	display: flex;
 	flex-wrap: wrap;
-	margin: 0 auto;
-	height: 500px;
+	margin: 20px auto;
+	padding-top: 20px;
+	padding-bottom: 10px;
 	width: 500px;
 }
 
@@ -61,9 +65,8 @@ button {
 }
 
 .item-checklist {
-	margin-top: -6em;
+	padding-top: 1em;
 }
-
 
 .item-input > p {
 	margin: 0;
@@ -71,31 +74,28 @@ button {
 	padding-top: 5px;
 }
 
-.item-list1 {
-	background-color: red;
+.item-list {
+	background-color: #ccc;
+	border-radius: 5px;
 	color: #fff;
+	list-style: none;
+	font-family: Lucida, sans-serif;
 	height: 30px;
-	width: 300px;
-	margin-left: 2em;
+	width: 400px;
 	margin-bottom: 4px;
+	margin-left: -6px;
+	padding-left: 1em;
+	padding-right: 1em;
+	padding-top: .5em;
+	padding-bottom: 8px;
 }
 
-.item-list2 {
-	background-color: green;
-	color: #fff;
-	height: 30px;
-	width: 300px;
-	margin-left: 2em;
-	margin-bottom: 4px;
+.item-list > p {
+
 }
 
-.item-list3 {
-	background-color: blue;
-	color: #fff;
-	height: 30px;
-	width: 300px;
-	margin-left: 2em;
-	margin-bottom: 4px;
+#delete {
+
 }
 
 .checkout {
@@ -106,4 +106,18 @@ button {
 	margin-left: 2em;
 	margin-bottom: 4px;
 	margin-top: 8em;
+}
+
+#newItem {
+	width: 300px;
+	height: 30px;
+	font-size: 1.5em;
+}
+
+.temp_items {
+	list-style: none;
+}
+
+.temp_items li {
+	margin-top: 5px;
 }
