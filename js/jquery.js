@@ -1,7 +1,16 @@
-$(document).ready(function() {
-	
+$(document).ready(readyHandler)
+var itemCount = 0;
+
+function readyHandler() {
 //What happens when you click on the add button.
-	$('#addBtn').click(function() {
+
+$('#addBtn').click(addBtnHandler);
+
+$('.item-checklist').on('click', '.delete', deleteBtnHandler);
+
+}
+
+function addBtnHandler() {
 	var Item = $('#newItem').val();
 	console.log(Item);
 	if(Item.trim()) {
@@ -9,30 +18,48 @@ $(document).ready(function() {
 
 //Defining adding the elements to HTML
 	var itemList = $('ul#item-checklist');
-	var itemCount = 0;
+	
 	var list = $('<li>');
-	list.attr("id", "item[" + itemCount+++"]");
+	list.attr("id", "item[" + itemCount++ +"]");
 	list.addClass('item-list');
 	list.html(Item);
 
-	var DelBtn = $('<button id="delete">Delete</button>');
+	var DelBtn = $('<button>');
+	DelBtn.addClass('delete');
+	DelBtn.html('Delete');
+
+	/* var DelBtn = $('<button>');
+	DelBtn.addClass('delete');
+	DelBtn.html('Delete');
+	*/
 
 	list.append(DelBtn);
 
 	$('.item-checklist').prepend(list);
 
-}
+	list.hide();
+	list.show('slow');
 
-else {
+	}
+
+	else {
 	console.log("This ain't food! Try again.");
+	}
+
 }
 
-	});
+function deleteBtnHandler() {
 
-	$('#delete').click(function() {
-		list.hide();
-		itemList.append(list);
-		list.show('slow');
-	});
+		var listItem = $('.item-list');
 
-});
+		console.log('Delete button clicked');
+		
+		listItem.hide('slow', function () {
+		listItem.remove();
+	});
+		
+	}
+	
+
+
+
