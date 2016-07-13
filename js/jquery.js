@@ -8,6 +8,12 @@ $('#addBtn').click(addBtnHandler);
 
 $('.item-checklist').on('click', '.delete', deleteBtnHandler);
 
+$('#newItem').keydown(function (enter) {
+	if(enter.keyCode === 13) {
+		addBtnHandler();
+	}
+});
+
 }
 
 function addBtnHandler() {
@@ -22,16 +28,11 @@ function addBtnHandler() {
 	var list = $('<li>');
 	list.attr("id", "item[" + itemCount++ +"]");
 	list.addClass('item-list');
-	list.html(Item);
+	list.html("<input id='cartItem' type='checkbox' name=" + Item + " value= " + Item + "> " + Item + "");
 
 	var DelBtn = $('<button>');
 	DelBtn.addClass('delete');
 	DelBtn.html('Delete');
-
-	/* var DelBtn = $('<button>');
-	DelBtn.addClass('delete');
-	DelBtn.html('Delete');
-	*/
 
 	list.append(DelBtn);
 
@@ -39,6 +40,8 @@ function addBtnHandler() {
 
 	list.hide();
 	list.show('slow');
+
+	$('#newItem').val('');
 
 	}
 
@@ -49,16 +52,13 @@ function addBtnHandler() {
 }
 
 function deleteBtnHandler() {
-
-		var listItem = $('.item-list');
-
 		console.log('Delete button clicked');
 		
-		listItem.hide('slow', function () {
-		listItem.remove();
+		$(this).parent().hide('slow', function () {
+		$(this).remove();
 	});
 		
-	}
+}
 	
 
 
