@@ -28,7 +28,7 @@ function addBtnHandler() {
 	var list = $('<li>');
 	list.attr("id", "item[" + itemCount++ +"]");
 	list.addClass('item-list');
-	list.html("<input id='cartItem' type='checkbox' name=" + Item + " value= " + Item + "> " + Item + "");
+	list.html(Item);
 
 	var DelBtn = $('<button>');
 	DelBtn.addClass('delete');
