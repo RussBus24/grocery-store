@@ -14,6 +14,8 @@ $('#newItem').keydown(function (enter) {
 	}
 });
 
+$('.item-checklist').on('click', '#CheckBtn', CheckDelete);
+
 }
 
 function addBtnHandler() {
@@ -28,11 +30,12 @@ function addBtnHandler() {
 	var list = $('<li>');
 	list.attr("id", "item[" + itemCount++ +"]");
 	list.addClass('item-list');
-	list.html(Item);
+	list.html("<input type='checkbox' id= 'CheckBtn' name=" + Item + " value= " + Item + "> " + Item + "");
 
 	var DelBtn = $('<button>');
 	DelBtn.addClass('delete');
 	DelBtn.html('Delete');
+	DelBtn.hide();
 
 	list.append(DelBtn);
 
@@ -53,13 +56,13 @@ function addBtnHandler() {
 
 function deleteBtnHandler() {
 		console.log('Delete button clicked');
-		
 		$(this).parent().hide('slow', function () {
 		$(this).remove();
 	});
 		
 }
-	
 
-
-
+function CheckDelete() {
+	console.log('Checkbox is checked.');
+	$(this).siblings('.delete').toggle('slow');
+}
