@@ -64,5 +64,5 @@ function deleteBtnHandler() {
 
 function CheckDelete() {
 	console.log('Checkbox is checked.');
-	$(this).siblings('.delete').toggle('slow');
+	$(this).siblings('.delete').fadeToggle('slow');
 }
