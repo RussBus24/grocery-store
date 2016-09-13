@@ -8,11 +8,15 @@ $('#addBtn').click(addBtnHandler);
 
 $('.item-checklist').on('click', '.delete', deleteBtnHandler);
 
+$('#clearBtn').click(clearBtnHandler);
+
 $('#newItem').keydown(function (enter) {
 	if(enter.keyCode === 13) {
 		addBtnHandler();
 	}
 });
+
+$('.item-checklist').on('click', '#CheckBtn', CheckDelete);
 
 }
 
@@ -28,11 +32,12 @@ function addBtnHandler() {
 	var list = $('<li>');
 	list.attr("id", "item[" + itemCount++ +"]");
 	list.addClass('item-list');
-	list.html(Item);
+	list.html("<input type='checkbox' id= 'CheckBtn' name=" + Item + " value= " + Item + "> " + Item + "");
 
 	var DelBtn = $('<button>');
 	DelBtn.addClass('delete');
 	DelBtn.html('Delete');
+	DelBtn.hide();
 
 	list.append(DelBtn);
 
@@ -43,6 +48,8 @@ function addBtnHandler() {
 
 	$('#newItem').val('');
 
+	showClearButton();
+
 	}
 
 	else {
@@ -51,15 +58,28 @@ function addBtnHandler() {
 
 }
 
+function showClearButton() {
+	$('#clearBtn').css('visibility', 'visible');
+}
+
 function deleteBtnHandler() {
 		console.log('Delete button clicked');
-		
 		$(this).parent().hide('slow', function () {
 		$(this).remove();
 	});
 		
 }
-	
 
+function clearBtnHandler() {
+	console.log('Clear button is clicked.');
+	$('.item-checklist').hide('slow', function () {
+		$('.item-checklist').empty();
+		$('.item-checklist').show();
+	});
 
+}
 
+function CheckDelete() {
+	console.log('Checkbox is checked.');
+	$(this).siblings('.delete').fadeToggle('slow');
+}
