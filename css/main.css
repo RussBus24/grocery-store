@@ -120,4 +120,7 @@ button {
 
 .temp_items li {
 	margin-top: 5px;
-}
+
+.clear-all {
+	margin: 0 auto;
+	visibility: hidden;
