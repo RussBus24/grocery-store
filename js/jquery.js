@@ -74,7 +74,7 @@ $(document).ready(function() {
 	console.log("This ain't food! Try again.");
 	}
 
-}
+});
 
 function showClearButton() {
 	$('#clearBtn').css('visibility', 'visible');
