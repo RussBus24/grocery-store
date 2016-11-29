@@ -68,10 +68,6 @@ function addBtnHandler() {
 }
 
 function showClearButton() {
-	$('#clearBtn').css('visibility', 'visible');
-}
-
-function showClearButton() {
 	$('.clear-all').fadeToggle('slow');
 }
 
