@@ -94,8 +94,8 @@ button {
 
 }
 
-#delete {
-
+.delete {
+	display: none;
 }
 
 .checkout {
@@ -124,5 +124,5 @@ button {
 
 .clear-all {
 	margin: 0 auto;
-	visibility: hidden;
+	display: none;
 }
