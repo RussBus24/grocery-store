@@ -30,7 +30,6 @@ function readyHandler() {
 function addBtnHandler() {
 
 //What happens when you click on the add button.	
-	$('#addBtn').click(function() {
 
 	var Item = $('#newItem').val();
 	console.log(Item);
@@ -66,7 +65,6 @@ function addBtnHandler() {
 		else {
 		console.log("This ain't food! Try again.");
 		}
-	});
 }
 
 function showClearButton() {
