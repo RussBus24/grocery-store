@@ -58,8 +58,6 @@ function addBtnHandler() {
 
 		$('#newItem').val('');
 
-		showClearButton();
-
 		}
 
 		else {
