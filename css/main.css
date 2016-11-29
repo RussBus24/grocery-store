@@ -124,5 +124,5 @@ button {
 
 .clear-all {
 	margin: 0 auto;
-	display: none;
+	visibility: hidden;
 }

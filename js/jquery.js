@@ -29,7 +29,8 @@ function readyHandler() {
 
 function addBtnHandler() {
 
-//What happens when you click on the add button.
+//What happens when you click on the add button.	
+	$('#addBtn').click(function() {
 
 	var Item = $('#newItem').val();
 	console.log(Item);
@@ -49,8 +50,6 @@ function addBtnHandler() {
 	DelBtn.html('Delete');
 	DelBtn.hide();
 
-	var DelBtn = $('<button class="delete">Delete</button>');
-
 	list.append(DelBtn);
 
 	$('.item-checklist').prepend(list);
@@ -60,12 +59,18 @@ function addBtnHandler() {
 
 	$('#newItem').val('');
 
+	showClearButton();
+
 	}
 
 	else {
 	console.log("This ain't food! Try again.");
 	}
 
+});
+
+function showClearButton() {
+	$('#clearBtn').css('visibility', 'visible');
 }
 
 function showClearButton() {
@@ -95,6 +100,3 @@ function CheckDelete() {
 	$(this).siblings('.delete').fadeToggle('slow');
 	console.log($(this).siblings('.delete'));
 }
-
-
-
