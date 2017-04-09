@@ -9,8 +9,8 @@ body {
 }
 
 h1 {
-	background-color: #ccc;
 	color: #fff;
+	text-shadow: 2px 2px #000000;
 	font-family: Lucida, sans-serif;
 	height: 50px;
 	margin: 0 auto;

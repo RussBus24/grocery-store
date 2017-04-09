@@ -27,6 +27,15 @@ function readyHandler() {
 
 }
 
+function checkItemCount() {
+	if (itemCount == 0) {
+		showClearButton();
+	}
+	else {
+		return;
+	}
+}
+
 function addBtnHandler() {
 
 //What happens when you click on the add button.	
@@ -54,9 +63,18 @@ function addBtnHandler() {
 		$('.item-checklist').prepend(list);
 
 		list.hide();
-		list.show('slow', showClearButton);
+		list.show('slow', function() {
+			if(itemCount == 1) {
+				showClearButton();
+			}
+			else {
+				return;
+			}
+		});
 
 		$('#newItem').val('');
+
+		console.log(itemCount);
 
 		}
 
@@ -73,7 +91,15 @@ function deleteBtnHandler() {
 		console.log('Delete button clicked');
 		$(this).parent().hide('slow', function () {
 			$(this).remove();
-		});		
+		});
+		itemCount--;
+		console.log(itemCount);
+		if (itemCount == 0) {
+			showClearButton();
+		}
+		else {
+			return;
+		}
 }
 
 function clearBtnHandler() {
