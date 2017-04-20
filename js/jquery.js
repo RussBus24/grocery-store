@@ -77,9 +77,7 @@ function addBtnHandler() {
             });
 
             $('#newItem').val('');
-
         }
-
         else {
         	return;
         }
