@@ -5,26 +5,25 @@ var itemCount = 0;
 function readyHandler() {
 	//What happens when you click on the add button.
 
-	$('#addBtn').click(addBtnHandler);
+        $('#addBtn').click(addBtnHandler);
 
-	$('.item-checklist').on('click', '.delete', deleteBtnHandler);
+        $('.item-checklist').on('click', '.delete', deleteBtnHandler);
 
-	$('#clearBtn').click(clearBtnHandler);
+        $('#clearBtn').click(clearBtnHandler);
 
-	$('#newItem').keydown(function (enter) {
-		if(enter.keyCode === 13) {
-			addBtnHandler();
-		}
-	});
+        $('#newItem').keydown(function (enter) {
+            if(enter.keyCode === 13) {
+                addBtnHandler();
+            }
+        });
 
-	$('.item-checklist').on('click', '.CheckBtn', CheckDelete);
+        $('.item-checklist').on('click', '.CheckBtn', CheckDelete);
 
-	$('#delete').click(function() {
-		list.hide();
-		itemList.append(list);
-		list.show('slow');
-	});
-
+        $('#delete').click(function() {
+            list.hide();
+            itemList.append(list);
+            list.show('slow');
+        });
 }
 
 function checkItemCount() {
@@ -38,49 +37,53 @@ function checkItemCount() {
 
 function addBtnHandler() {
 
-//What happens when you click on the add button.	
+//What happens when you click on the add button.
+    var addButton = $('#newItem').val();
 
-	var Item = $('#newItem').val();
-	console.log(Item);
-	if(Item.trim()) {
-		console.log("Item has been added to your shopping cart.");
+    if (addButton == "") {
+        alert("You need to enter a food item first.");
+        return;
+    }
+    else {
+
+        var Item = $('#newItem').val();
+        if (Item.trim()) {
 
 //Defining adding the elements to HTML
-		var itemList = $('ul#item-checklist');
+            var itemList = $('ul#item-checklist');
 
-		var list = $('<li>');
-		list.attr("id", "item[" + itemCount++ +"]");
-		list.addClass('item-list');
-		list.html("<input type='checkbox' class= 'CheckBtn' name=" + Item + " value= " + Item + "> " + Item + "");
+            var list = $('<li>');
+            list.attr("id", "item[" + itemCount++ + "]");
+            list.addClass('item-list');
+            list.html("<input type='checkbox' class= 'CheckBtn' name=" + Item + " value= " + Item + "> " + Item + "");
 
-		var DelBtn = $('<button>');
-		DelBtn.addClass('delete');
-		DelBtn.html('Delete');
-		DelBtn.hide();
+            var DelBtn = $('<button>');
+            DelBtn.addClass('delete');
+            DelBtn.html('Delete');
+            DelBtn.hide();
 
-		list.append(DelBtn);
+            list.append(DelBtn);
 
-		$('.item-checklist').prepend(list);
+            $('.item-checklist').prepend(list);
 
-		list.hide();
-		list.show('slow', function() {
-			if(itemCount == 1) {
-				showClearButton();
-			}
-			else {
-				return;
-			}
-		});
+            list.hide();
+            list.show('slow', function () {
+                if (itemCount == 1) {
+                    showClearButton();
+                }
+                else {
+                    return;
+                }
+            });
 
-		$('#newItem').val('');
+            $('#newItem').val('');
 
-		console.log(itemCount);
+        }
 
-		}
-
-		else {
-		console.log("This ain't food! Try again.");
-		}
+        else {
+        	return;
+        }
+    }
 }
 
 function showClearButton() {
@@ -88,12 +91,10 @@ function showClearButton() {
 }
 
 function deleteBtnHandler() {
-		console.log('Delete button clicked');
 		$(this).parent().hide('slow', function () {
 			$(this).remove();
 		});
 		itemCount--;
-		console.log(itemCount);
 		if (itemCount == 0) {
 			showClearButton();
 		}
@@ -103,7 +104,6 @@ function deleteBtnHandler() {
 }
 
 function clearBtnHandler() {
-	console.log('Clear button is clicked.');
 	$('.clear-all').fadeToggle('slow', function() {
 		$('.item-checklist').hide('slow', function () {
 			$('.item-checklist').empty();
