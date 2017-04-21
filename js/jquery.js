@@ -111,7 +111,5 @@ function clearBtnHandler() {
 }
 
 function CheckDelete() {
-	console.log('Checkbox is checked.');
 	$(this).siblings('.delete').fadeToggle('slow');
-	console.log($(this).siblings('.delete'));
 }
