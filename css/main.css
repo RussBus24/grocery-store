@@ -1,33 +1,42 @@
 @media only screen
 and (min-device-width: 375px)
 and (max-device-width: 667px)
-and (-webkit-min-device-pixel-ratio: 2) {
-	body {
-		background-image: url('../pexels-photo-26799.jpg');
-		height: 1000px;
-		background-size: auto;
+and (-webkit-device-pixel-ratio: 2) {
+	#newItem {
+		width: 300px;
+		height: 30px;
+		font-size: 1.5em;
+		box-shadow: 1px 1px 2px 2px rgba(0,0,0,1);
 	}
+}
 
-	.container {
-
-	}
+html {
+	background: url('../pexels-photo-26799.jpg') no-repeat center center fixed;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
 }
 
 body {
+	background-color: transparent;
 	margin: 0;
+
 }
 
 .container {
-	background-image: url('../pexels-photo-26799.jpg');
-	background-position: fixed;
 	height: 1000px;
+	width: 100%;
+}
+
+.header {
+
 }
 
 h1 {
 	color: #fff;
 	text-shadow: 2px 2px #000000;
 	font-family: Lucida, sans-serif;
-	height: 50px;
 	margin: 0 auto;
 	padding-top: 2.3em;
 	text-align: center;
