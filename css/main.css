@@ -11,6 +11,7 @@ and (-webkit-device-pixel-ratio : 3) {
 		height: 30px;
 		font-size: 1.5em;
 		box-shadow: 1px 1px 2px 2px rgba(0,0,0,1);
+		-webkit-box-shadow: 1px 1px 2px 2px rgba(0,0,0,1);
 		border-radius: 1px;
 	}
 	h1 {
@@ -32,6 +33,16 @@ and (-webkit-device-pixel-ratio: 2) {
 		font-size: 1.5em;
 		box-shadow: 1px 1px 2px 2px rgba(0,0,0,1);
 	}
+<<<<<<< HEAD
+}
+
+html {
+	background: url('../pexels-photo-26799.jpg') no-repeat center center fixed;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+=======
 	h1 {
 		font-size: 70px;
 	}
@@ -58,6 +69,7 @@ and (-webkit-device-pixel-ratio: 2) {
 		font-size: 40px;
 		padding-bottom: 2em!important;
 	}
+>>>>>>> master
 }
 
 html {
