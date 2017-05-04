@@ -68,7 +68,7 @@ function addBtnHandler() {
 
             list.hide();
             list.show('slow', function () {
-                if (itemCount == 1) {
+                if (itemCount >= 1) {
                     showClearButton();
                 }
                 else {
@@ -85,7 +85,7 @@ function addBtnHandler() {
 }
 
 function showClearButton() {
-	$('.clear-all').fadeToggle('slow');
+	$('.clear-all').fadeIn('slow');
 }
 
 function deleteBtnHandler() {
@@ -102,12 +102,13 @@ function deleteBtnHandler() {
 }
 
 function clearBtnHandler() {
-	$('.clear-all').fadeToggle('slow', function() {
+	$('.clear-all').fadeOut('slow', function() {
 		$('.item-checklist').hide('slow', function () {
 			$('.item-checklist').empty();
 			$('.item-checklist').show();
 		});
 	});
+	itemCount = 0;
 }
 
 function CheckDelete() {
