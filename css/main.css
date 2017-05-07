@@ -7,7 +7,7 @@ and (orientation : portrait)
 and (-webkit-min-device-pixel-ratio : 3)
 and (-webkit-device-pixel-ratio : 3) {
 	#newItem {
-		width: 300px!important;
+		width: 380px!important;
 		height: 50px!important;
 		font-size: 2em!important;
 		box-shadow: 1px 1px 2px 2px rgba(0, 0, 0, 1)!important;
@@ -26,10 +26,10 @@ and (-webkit-device-pixel-ratio : 3) {
 		display: flex;
 		flex-wrap: wrap;
 		margin: 20px auto;
-		padding-top: 20px;
-		padding-bottom: 20px;
-		width: 550px;
-		height: 100px;
+		padding-top: 20px!important;
+		padding-bottom: 20px!important;
+		width: 600px!important;
+		height: auto;
 	}
 	#addBtn {
 		background-color: #4CAF50;
@@ -39,7 +39,29 @@ and (-webkit-device-pixel-ratio : 3) {
 		text-decoration: none;
 		display: inline-block;
 		height: 50px!important;
-		width: 50px!important;
+		width: 75px!important;
+		font-size: 20px!important;
+	}
+	.item-input {
+		background-color: #fff;
+		border: solid 1px #000000;
+		font-family: sans-serif;
+		margin-left: 2em;
+		height: 50px!important;
+		width: 380px!important;
+		text-align: left;
+	}
+	.item-checklist {
+		padding-top: 2em!important;
+	}
+	.item-list {
+		font-size: 1.7em;
+		height: 55px!important;
+		width: 475px!important;
+
+	}
+	.add-button {
+		height: 50px!important;
 	}
 }
 
