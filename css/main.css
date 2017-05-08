@@ -42,6 +42,10 @@ and (-webkit-device-pixel-ratio : 3) {
 		width: 75px!important;
 		font-size: 20px!important;
 	}
+	#clearBtn {
+		height: 50px!important;
+		font-size: 20px!important;
+	}
 	.item-input {
 		background-color: #fff;
 		border: solid 1px #000000;
@@ -56,12 +60,15 @@ and (-webkit-device-pixel-ratio : 3) {
 	}
 	.item-list {
 		font-size: 1.7em;
-		height: 55px!important;
-		width: 475px!important;
+		height: 65px!important;
+		width: 515px!important;
 
 	}
 	.add-button {
 		height: 50px!important;
+	}
+	button {
+		height: 40px!important;
 	}
 }
 
