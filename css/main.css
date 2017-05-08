@@ -242,7 +242,7 @@ h3 {
 
 .item-input {
 	background-color: #fff;
-	border: solid 1px #000000;
+	/*border: solid 1px #000000;*/
 	font-family: sans-serif;
 	margin-left: 2em;
 	height: 30px;
@@ -357,4 +357,8 @@ button {
 .clear-all {
 	margin: 0 auto;
 	display: none;
+}
+
+input {
+
 }
