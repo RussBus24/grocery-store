@@ -3,7 +3,6 @@ $(document).ready(readyHandler)
 var itemCount = 0;
 
 function readyHandler() {
-	//What happens when you click on the add button.
 
         $('#addBtn').click(addBtnHandler);
 
@@ -18,21 +17,6 @@ function readyHandler() {
         });
 
         $('.item-checklist').on('click', '.CheckBtn', CheckDelete);
-
-        $('#delete').click(function() {
-            list.hide();
-            itemList.append(list);
-            list.show('slow');
-        });
-}
-
-function checkItemCount() {
-	if (itemCount == 0) {
-		showClearButton();
-	}
-	else {
-		return;
-	}
 }
 
 function addBtnHandler() {
@@ -45,7 +29,6 @@ function addBtnHandler() {
         return;
     }
     else {
-
         var Item = $('#newItem').val();
         if (Item.trim()) {
 
@@ -71,12 +54,13 @@ function addBtnHandler() {
                 if (itemCount >= 1) {
                     showClearButton();
                 }
-                else {
-                    return;
+                else if (itemCount = 0) {
+                    hideClearButton();
                 }
             });
 
             $('#newItem').val('');
+            console.log(itemCount);
         }
         else {
         	return;
@@ -88,17 +72,28 @@ function showClearButton() {
 	$('.clear-all').fadeIn('slow');
 }
 
+function hideClearButton() {
+    $('.clear-all').fadeOut('slow', function() {
+        $('.item-checklist').hide('slow', function () {
+            $('.item-checklist').empty();
+            $('.item-checklist').show();
+        });
+        console.log(itemCount);
+    });
+}
+
 function deleteBtnHandler() {
-		$(this).parent().hide('slow', function () {
-			$(this).remove();
-		});
-		itemCount--;
-		if (itemCount == 0) {
-			showClearButton();
-		}
-		else {
-			return;
-		}
+        itemCount--;
+        if (itemCount <= 0) {
+            hideClearButton();
+        }
+        else {
+            $(this).parent().hide('slow', function () {
+                $(this).remove();
+            });
+            console.log(itemCount);
+
+        }
 }
 
 function clearBtnHandler() {
