@@ -60,7 +60,6 @@ function addBtnHandler() {
             });
 
             $('#newItem').val('');
-            console.log(itemCount);
         }
         else {
         	return;
@@ -78,7 +77,6 @@ function hideClearButton() {
             $('.item-checklist').empty();
             $('.item-checklist').show();
         });
-        console.log(itemCount);
     });
 }
 
@@ -91,8 +89,6 @@ function deleteBtnHandler() {
             $(this).parent().hide('slow', function () {
                 $(this).remove();
             });
-            console.log(itemCount);
-
         }
 }
 
